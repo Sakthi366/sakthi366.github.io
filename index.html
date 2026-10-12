@@ -20,6 +20,7 @@
     font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     -webkit-font-smoothing:antialiased; line-height:1.6;
   }
+  body.locked{overflow:hidden;position:fixed;width:100%;top:0;left:0}
   .serif{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
@@ -420,12 +421,21 @@
     document.getElementById('w-date').textContent = dstr;
   }catch(e){}
 
-  // 欢迎页进入（临时）
+  // 锁死首页滚动：欢迎页显示期间禁止 body 滚动（含 iOS 触摸）
+  document.body.classList.add('locked');
+  var w0 = document.getElementById('welcome');
+  if(w0){ w0.addEventListener('touchmove', function(e){ e.preventDefault(); }, {passive:false}); }
+
+  // 欢迎页进入
   var eb = document.getElementById('enter-btn');
   if(eb){ eb.addEventListener('click', function(){
     var w = document.getElementById('welcome');
     w.classList.add('leave');
-    setTimeout(function(){ w.style.display='none'; window.scrollTo(0,0); }, 600);
+    setTimeout(function(){
+      w.style.display='none';
+      document.body.classList.remove('locked');
+      window.scrollTo(0,0);
+    }, 600);
   }); }
 
   var FALLBACK = [
