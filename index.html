@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAEMYN BRIEF · 个人新闻简报</title>
+<title>晨间电讯 · 个人新闻简报</title>
 <meta name="robots" content="noindex, nofollow">
 <style>
   :root{
@@ -99,22 +99,32 @@
   footer{border-top:3px double var(--ink);margin-top:36px;padding:22px 0 40px;
     font-size:12px;color:var(--muted);letter-spacing:.12em;text-align:center;line-height:2}
   .topline{height:6px;background:var(--red)}
-  /* ===== welcome overlay（临时） ===== */
+  /* ===== welcome / homepage ===== */
   #welcome{position:fixed;inset:0;z-index:200;background:var(--paper);
-    display:flex;align-items:center;justify-content:center;text-align:center;
-    transition:opacity .55s ease;padding:24px}
+    display:flex;flex-direction:column;transition:opacity .55s ease}
   #welcome.leave{opacity:0;pointer-events:none}
-  .w-kicker{font-size:11px;letter-spacing:.55em;color:var(--muted);margin-bottom:16px}
-  .w-title{font-size:clamp(52px,10vw,110px);font-weight:700;letter-spacing:.05em;line-height:1}
-  .w-title span{color:var(--red)}
-  .w-rule{width:64px;height:3px;background:var(--red);margin:22px auto}
-  .w-sub{font-size:14px;letter-spacing:.3em;color:var(--muted);margin-bottom:34px}
+  .w-folio{display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:16px 28px;border-bottom:1px solid var(--ink);flex-wrap:wrap;
+    font-size:11px;letter-spacing:.35em;color:var(--muted)}
+  .w-box{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:24px;animation:rise .8s ease both}
+  .w-kicker{font-size:11px;letter-spacing:.6em;color:var(--muted);margin-bottom:20px;text-indent:.6em}
+  .w-title{font-size:clamp(64px,13vw,148px);font-weight:700;letter-spacing:.12em;
+    line-height:1.15;text-indent:.12em}
+  .w-title .red{color:var(--red)}
+  .w-rule{width:min(420px,72vw);margin:28px auto;border-top:3px solid var(--ink);position:relative}
+  .w-rule:after{content:"";display:block;border-top:1px solid var(--ink);margin-top:3px}
+  .w-secs{font-size:13px;letter-spacing:.4em;color:var(--ink);margin-bottom:38px;
+    text-indent:.4em;line-height:2.2;max-width:640px}
+  .w-secs .dot{color:var(--red)}
   #enter-btn{background:var(--black);color:#f5f2ea;border:none;cursor:pointer;
-    font-size:14px;letter-spacing:.5em;font-weight:700;padding:18px 42px 18px 52px;
+    font-size:14px;letter-spacing:.5em;font-weight:700;padding:18px 40px 18px 56px;
     transition:background .25s,transform .25s;font-family:inherit}
   #enter-btn:hover{background:var(--red);transform:translateY(-2px)}
-  .w-foot{margin-top:26px;font-size:11.5px;letter-spacing:.25em;color:var(--muted)}
-  .w-box{animation:rise .8s ease both}
+  .w-note{margin-top:24px;font-size:11px;letter-spacing:.3em;color:var(--muted)}
+  .w-bottom{display:flex;justify-content:space-between;align-items:center;
+    padding:16px 28px;border-top:1px solid var(--ink);
+    font-size:11px;letter-spacing:.35em;color:var(--muted)}
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:6px;
     animation:blink 1.6s infinite}
@@ -124,16 +134,18 @@
 <body>
 <div class="topline"></div>
 
-<!-- WELCOME OVERLAY（临时欢迎页；恢复密码保护时删除本段 + 对应 CSS/JS 即可） -->
+<!-- HOMEPAGE -->
 <div id="welcome">
+  <div class="w-folio"><span id="w-date">2026年10月12日</span><span>每日策展 · PERSONAL CURATION</span></div>
   <div class="w-box">
-    <div class="w-kicker">PERSONAL NEWS CURATION</div>
-    <div class="w-title serif">RAEMYN <span>BRIEF</span></div>
+    <div class="w-kicker">THE MORNING WIRE</div>
+    <div class="w-title serif">晨间<span class="red">电讯</span></div>
     <div class="w-rule"></div>
-    <p class="w-sub">个人新闻简报 · <span id="w-date">2026年10月12日</span></p>
-    <button id="enter-btn">开始阅读 <span class="arr">→</span></button>
-    <div class="w-foot">第 001 期 · 国际 / 经济 / 政治 / 科技 / AI产业 / 芯片美股 / Web3·Crypto</div>
+    <div class="w-secs">国际<span class="dot"> · </span>经济<span class="dot"> · </span>政治<span class="dot"> · </span>科技<span class="dot"> · </span>AI产业<span class="dot"> · </span>芯片美股<span class="dot"> · </span>Web3·Crypto</div>
+    <button id="enter-btn">进入阅读 <span class="arr">→</span></button>
+    <div class="w-note">以编辑视角重写每一条新闻 · 点击标题阅读原文</div>
   </div>
+  <div class="w-bottom"><span>第 001 期</span><span>EST. 2026</span></div>
 </div>
 
 <div class="ticker" title="实时行情（CoinGecko）">
@@ -142,8 +154,8 @@
 
 <div class="wrap">
   <header class="mast">
-    <div class="kicker">PERSONAL NEWS CURATION</div>
-    <h1 class="serif">RAEMYN <span class="red">BRIEF</span></h1>
+    <div class="kicker">THE MORNING WIRE</div>
+    <h1 class="serif">晨间<span class="red">电讯</span></h1>
     <div class="dateline">
       <span id="dateline-date">2026年10月12日 星期一</span>
       <span>第 001 期 · 个人策展简报</span>
@@ -371,9 +383,9 @@
 
 <div class="wrap">
   <footer>
-    RAEMYN BRIEF · 第 001 期 · 2026-10-12<br>
+    晨间电讯 · 第 001 期 · 2026-10-12<br>
     由 Muse 策展 · 摘要为编辑改写，点击标题阅读原文 · 行情与热榜由公开 API 实时拉取<br>
-    © 2026 RAEMYN
+    © 2026 晨间电讯
   </footer>
 </div>
 
