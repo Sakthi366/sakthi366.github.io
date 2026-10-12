@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晨间电讯 · 个人新闻简报</title>
+<title>一览 · 个人新闻简报</title>
 <meta name="robots" content="noindex, nofollow">
 <style>
   :root{
@@ -106,13 +106,25 @@
   .w-folio{display:flex;justify-content:space-between;align-items:center;gap:12px;
     padding:16px 28px;border-bottom:1px solid var(--ink);flex-wrap:wrap;
     font-size:11px;letter-spacing:.35em;color:var(--muted)}
+  .w-stage{flex:1;display:flex;align-items:stretch;justify-content:center;
+    position:relative;overflow:hidden;min-height:0}
+  .w-vert{writing-mode:vertical-rl;-webkit-writing-mode:vertical-rl;
+    font-size:13px;letter-spacing:1em;color:var(--muted);user-select:none;
+    padding:44px 6px 44px 22px;white-space:nowrap}
   .w-box{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:24px;animation:rise .8s ease both}
-  .w-kicker{font-size:11px;letter-spacing:.6em;color:var(--muted);margin-bottom:20px;text-indent:.6em}
-  .w-title{font-size:clamp(64px,13vw,148px);font-weight:700;letter-spacing:.12em;
-    line-height:1.15;text-indent:.12em}
+    text-align:center;padding:20px 12px;animation:rise .8s ease both;
+    max-width:780px;min-width:0}
+  .seal{width:66px;height:66px;background:var(--red);color:#f5f2ea;border-radius:9px;
+    display:flex;align-items:center;justify-content:center;flex:none;
+    font-family:Georgia,"Songti SC","STSong","Noto Serif SC",serif;
+    font-size:35px;font-weight:700;margin-bottom:28px;transform:rotate(-4deg);
+    box-shadow:3px 3px 0 rgba(20,18,14,.14)}
+  .w-kicker{font-size:11px;letter-spacing:.65em;color:var(--muted);
+    margin-bottom:22px;text-indent:.65em}
+  .w-title{font-size:clamp(88px,17vw,190px);font-weight:700;letter-spacing:.18em;
+    line-height:1.12;text-indent:.18em}
   .w-title .red{color:var(--red)}
-  .w-rule{width:min(420px,72vw);margin:28px auto;border-top:3px solid var(--ink);position:relative}
+  .w-rule{width:min(460px,74vw);margin:30px auto;border-top:3px solid var(--ink);position:relative}
   .w-rule:after{content:"";display:block;border-top:1px solid var(--ink);margin-top:3px}
   .w-secs{font-size:13px;letter-spacing:.4em;color:var(--ink);margin-bottom:38px;
     text-indent:.4em;line-height:2.2;max-width:640px}
@@ -125,6 +137,7 @@
   .w-bottom{display:flex;justify-content:space-between;align-items:center;
     padding:16px 28px;border-top:1px solid var(--ink);
     font-size:11px;letter-spacing:.35em;color:var(--muted)}
+  @media(max-width:560px){.w-vert{display:none}}
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:6px;
     animation:blink 1.6s infinite}
@@ -137,13 +150,17 @@
 <!-- HOMEPAGE -->
 <div id="welcome">
   <div class="w-folio"><span id="w-date">2026年10月12日</span><span>每日策展 · PERSONAL CURATION</span></div>
-  <div class="w-box">
-    <div class="w-kicker">THE MORNING WIRE</div>
-    <div class="w-title serif">晨间<span class="red">电讯</span></div>
-    <div class="w-rule"></div>
-    <div class="w-secs">国际<span class="dot"> · </span>经济<span class="dot"> · </span>政治<span class="dot"> · </span>科技<span class="dot"> · </span>AI产业<span class="dot"> · </span>芯片美股<span class="dot"> · </span>Web3·Crypto</div>
-    <button id="enter-btn">进入阅读 <span class="arr">→</span></button>
-    <div class="w-note">以编辑视角重写每一条新闻 · 点击标题阅读原文</div>
+  <div class="w-stage">
+    <div class="w-vert">览尽天下事</div>
+    <div class="w-box">
+      <div class="seal">览</div>
+      <div class="w-kicker">AT A GLANCE</div>
+      <div class="w-title serif">一<span class="red">览</span></div>
+      <div class="w-rule"></div>
+      <div class="w-secs">国际<span class="dot"> · </span>经济<span class="dot"> · </span>政治<span class="dot"> · </span>科技<span class="dot"> · </span>AI产业<span class="dot"> · </span>芯片美股<span class="dot"> · </span>Web3·Crypto</div>
+      <button id="enter-btn">进入阅读 <span class="arr">→</span></button>
+      <div class="w-note">以编辑视角重写每一条新闻 · 点击标题阅读原文</div>
+    </div>
   </div>
   <div class="w-bottom"><span>第 001 期</span><span>EST. 2026</span></div>
 </div>
@@ -154,8 +171,8 @@
 
 <div class="wrap">
   <header class="mast">
-    <div class="kicker">THE MORNING WIRE</div>
-    <h1 class="serif">晨间<span class="red">电讯</span></h1>
+    <div class="kicker">AT A GLANCE</div>
+    <h1 class="serif">一<span class="red">览</span></h1>
     <div class="dateline">
       <span id="dateline-date">2026年10月12日 星期一</span>
       <span>第 001 期 · 个人策展简报</span>
@@ -383,9 +400,9 @@
 
 <div class="wrap">
   <footer>
-    晨间电讯 · 第 001 期 · 2026-10-12<br>
+    一览 · 第 001 期 · 2026-10-12<br>
     由 Muse 策展 · 摘要为编辑改写，点击标题阅读原文 · 行情与热榜由公开 API 实时拉取<br>
-    © 2026 晨间电讯
+    © 2026 一览
   </footer>
 </div>
 
