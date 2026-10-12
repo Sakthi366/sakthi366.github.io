@@ -104,7 +104,7 @@
     font-size:12px;color:var(--muted);letter-spacing:.12em;text-align:center;line-height:2}
   .topline{height:2px;background:linear-gradient(90deg,var(--acc),rgba(34,211,238,0))}
   /* ===== welcome / homepage : tech ===== */
-  #welcome{position:fixed;inset:0;z-index:200;
+  #welcome{position:fixed;inset:0;z-index:200;overflow:hidden;
     background-color:var(--bg);
     background-image:linear-gradient(rgba(148,163,184,.05) 1px,transparent 1px),
       linear-gradient(90deg,rgba(148,163,184,.05) 1px,transparent 1px);
@@ -135,9 +135,16 @@
     cursor:pointer;font-family:var(--mono);font-size:13px;letter-spacing:.42em;font-weight:600;
     padding:17px 36px 17px 52px;transition:all .25s}
   #enter-btn:hover{background:var(--acc);color:#06232a;border-color:var(--acc)}
-  .w-bottom{display:flex;justify-content:space-between;align-items:center;
+  .w-bottom{display:flex;justify-content:center;align-items:center;
     padding:16px 28px;border-top:1px solid var(--line);
     font-family:var(--mono);font-size:11px;letter-spacing:.28em;color:var(--muted)}
+  @media(max-height:720px){
+    .w-title{font-size:clamp(72px,17vh,130px)}
+    .w-rule{margin:22px auto}
+    .w-kicker{margin-bottom:18px}
+    .w-secs{margin-bottom:14px}
+    .w-stats{margin-bottom:28px}
+  }
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--acc);margin-right:6px;
     animation:blink 1.6s infinite}
@@ -149,18 +156,18 @@
 
 <!-- HOMEPAGE -->
 <div id="welcome">
-  <div class="w-folio"><span id="w-date">2026年10月12日</span><span><span class="live-dot"></span>LIVE · 每日策展</span></div>
+  <div class="w-folio"><span id="w-date">2026年10月12日</span><span><span class="live-dot"></span>LIVE</span></div>
   <div class="w-stage">
     <div class="w-box">
       <div class="w-kicker"><span class="prompt">&gt;</span> THE FRONT PAGE<span class="cursor">_</span></div>
       <div class="w-title">头<span class="acc">版</span></div>
       <div class="w-rule"></div>
-      <div class="w-secs">国际 / 经济 / 政治 / 科技 / AI产业 / 芯片美股 / Web3·Crypto</div>
+      <div class="w-secs">为你筛选值得读的新闻，每天一页读完</div>
       <div class="w-stats">21 STORIES · 7 SECTIONS · 实时数据</div>
       <button id="enter-btn">进入阅读 →</button>
     </div>
   </div>
-  <div class="w-bottom"><span>VOL. 001</span><span>EST. 2026</span></div>
+  <div class="w-bottom"><span>EST. 2026</span></div>
 </div>
 
 <div class="ticker" title="实时行情（CoinGecko）">
